@@ -1,5 +1,5 @@
 {
-  "name": "@blackglory/extra-tags",
+  "name": "extra-tags",
   "version": "0.1.0",
   "files": [
     "lib",
