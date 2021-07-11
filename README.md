@@ -93,6 +93,12 @@ function removeMultilineFooter(text: string): string
 function toString(strings: TemplateStringsArray, ...values: unknown[]): string
 ```
 
+#### dedent
+
+```ts
+function dedent(strings: TemplateStringsArray, ...values: unknown[]): string
+```
+
 ### Transformer
 
 #### removeFalsyValues

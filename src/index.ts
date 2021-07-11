@@ -1,3 +1,4 @@
+export * from './dedent'
 export * from './filter'
 export * from './map'
 export * from './remove-blank-lines'
