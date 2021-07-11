@@ -22,7 +22,7 @@ describe('dedent(strings: TemplateStringsArray, ...values: unknown[]): string', 
       expect(result).toBe('hello world ')
     })
 
-    test('multi-line', () => {
+    test('multi-line strings', () => {
       const result = dedent`
         hello
         world
@@ -31,6 +31,21 @@ describe('dedent(strings: TemplateStringsArray, ...values: unknown[]): string', 
       expect(result).toBe(
         'hello' + '\n'
       + 'world'
+      )
+    })
+
+    test('multi-line values', () => {
+      const result = dedent`
+        a
+        ${'b\nc'}
+        d
+      `
+
+      expect(result).toBe(
+        'a' + '\n'
+      + 'b' + '\n'
+      + 'c' + '\n'
+      + 'd'
       )
     })
   })

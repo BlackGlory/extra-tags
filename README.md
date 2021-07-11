@@ -12,12 +12,14 @@ yarn add extra-tags
 
 ```ts
 import {
-  toString
+  concat
 , removeFalsyValues
 , removeExtraIndents
 , removeMultilineHeader
 , removeMultilineFooter
 , removeBlankLines
+, valuesToStrings
+, indentMultilineValues
 } from 'extra-tags'
 
 function code(strings: TemplateStringsArray, ...values: unknown[]): string {
@@ -26,8 +28,12 @@ function code(strings: TemplateStringsArray, ...values: unknown[]): string {
       removeExtraIndents(
         removeMultilineFooter(
           removeMultilineHeader(
-            toString(
-              ...removeFalsyValues(strings, ...values)
+            concat(
+              ...indentMultilineValues(
+                ...valuesToStrings(
+                  ...removeFalsyValues(strings, ...values)
+                )
+              )
             )
           )
         )
@@ -87,10 +93,10 @@ function removeMultilineFooter(text: string): string
 
 ### Reducer
 
-#### toString
+#### concat
 
 ```ts
-function toString(strings: TemplateStringsArray, ...values: unknown[]): string
+function concat(strings: TemplateStringsArray, ...values: unknown[]): string
 ```
 
 #### dedent
@@ -108,6 +114,24 @@ function removeFalsyValues<T>(
   strings: TemplateStringsArray
 , ...values: T[]
 ): TagParameters<Exclude<T, Falsy>>
+```
+
+#### valuesToStrings
+
+```ts
+function stringifyValues(
+  strings: TemplateStringsArray
+, ...values: unknown[]
+): TagParameters<string>
+```
+
+#### indentMultilineValues
+
+```ts
+function indentMultilineValues(
+  strings: TemplateStringsArray
+, ...values: string[]
+): TagParameters<string> {
 ```
 
 ### Transformer Creator

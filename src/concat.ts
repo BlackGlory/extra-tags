@@ -1,6 +1,6 @@
 import { last } from '@utils/last'
 
-export function toString(strings: TemplateStringsArray, ...values: unknown[]): string {
+export function concat(strings: TemplateStringsArray, ...values: unknown[]): string {
   let result = ''
   for (let i = 0; i < values.length; i++) {
     result += strings[i]
