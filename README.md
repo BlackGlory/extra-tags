@@ -8,53 +8,6 @@ npm install --save extra-tags
 yarn add extra-tags
 ```
 
-## Usage
-
-```ts
-import {
-  concat
-, removeFalsyValues
-, removeExtraIndents
-, removeMultilineHeader
-, removeMultilineFooter
-, removeBlankLines
-, valuesToStrings
-, indentMultilineValues
-} from 'extra-tags'
-
-function code(strings: TemplateStringsArray, ...values: unknown[]): string {
-  return (
-    removeBlankLines(
-      removeExtraIndents(
-        removeMultilineFooter(
-          removeMultilineHeader(
-            concat(
-              ...indentMultilineValues(
-                ...valuesToStrings(
-                  ...removeFalsyValues(strings, ...values)
-                )
-              )
-            )
-          )
-        )
-      )
-    )
-  )
-}
-
-const on = true
-
-code`
-  <div>
-    ${on && '<p>On</p>'}
-    ${!on && '<p>Off</p>'}
-  </div>
-`
-// <div>
-//   <p>On</p>
-// </div>
-```
-
 ## API
 
 ```ts
@@ -70,7 +23,10 @@ type Transformer<T, U> = (strings: TemplateStringsArray, ...values: T[]) => TagP
 #### removeExtraIndents
 
 ```ts
-function removeExtraIndents(text: string): string
+function removeExtraIndents(
+  text: string
+, { ignoreBlankLines = false }: { ignoreBlankLines?: boolean } = {}
+): string
 ```
 
 #### removeBlankLines

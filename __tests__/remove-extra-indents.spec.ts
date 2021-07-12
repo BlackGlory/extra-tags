@@ -45,5 +45,20 @@ describe('removeExtraIndents(text: string): string', () => {
         world
       `)
     })
+
+    test('ignoreBlankLines = true', () => {
+      const result = removeExtraIndents(`
+        hello
+
+        world
+      `, { ignoreBlankLines: true })
+
+      expect(result).toBe(
+        '\n'
+      + 'hello' + '\n'
+      + '\n'
+      + 'world' + '\n'
+      )
+    })
   })
 })

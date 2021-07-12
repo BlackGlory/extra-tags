@@ -17,6 +17,7 @@ export function dedent(strings: TemplateStringsArray, ...values: unknown[]): str
           )
         )
       )
+    , { ignoreBlankLines: true }
     )
   )
 }

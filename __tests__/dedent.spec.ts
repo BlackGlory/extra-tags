@@ -34,6 +34,20 @@ describe('dedent(strings: TemplateStringsArray, ...values: unknown[]): string', 
       )
     })
 
+    test('multi-line strings with blank lines', () => {
+      const result = dedent`
+        hello
+
+        world
+      `
+
+      expect(result).toBe(
+        'hello' + '\n'
+      + '\n'
+      + 'world'
+      )
+    })
+
     test('multi-line values', () => {
       const result = dedent`
         a
