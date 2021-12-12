@@ -21,8 +21,7 @@ export function removeExtraIndents(
       }
     , Infinity
     )
-  if (commonIndentLength === 0
-  ||  commonIndentLength === Infinity) {
+  if (commonIndentLength === 0 || commonIndentLength === Infinity) {
     return text
   }
 
