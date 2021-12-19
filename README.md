@@ -61,6 +61,12 @@ function concat(strings: TemplateStringsArray, ...values: unknown[]): string
 function dedent(strings: TemplateStringsArray, ...values: unknown[]): string
 ```
 
+#### oneline
+
+```ts
+function oneline(strings: TemplateStringsArray, ...values: unknown[]): string
+```
+
 ### Transformer
 
 #### removeFalsyValues

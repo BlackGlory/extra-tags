@@ -1,11 +1,15 @@
+export * from './concat'
 export * from './dedent'
+export * from './oneline'
+
 export * from './filter'
-export * from './indent-multiline-values'
 export * from './map'
+
 export * from './remove-blank-lines'
 export * from './remove-extra-indents'
-export * from './remove-falsy-values'
 export * from './remove-multiline-footer'
 export * from './remove-multiline-header'
-export * from './concat'
+
+export * from './remove-falsy-values'
 export * from './values-to-strings'
+export * from './indent-multiline-values'
