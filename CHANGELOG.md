@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/BlackGlory/extra-tags/compare/v0.2.3...v0.2.4) (2021-12-19)
+
+
+### Features
+
+* add oneline ([6bd2a90](https://github.com/BlackGlory/extra-tags/commit/6bd2a904dbe4b471d50012e63a49a22c9612920b))
+
 ### [0.2.3](https://github.com/BlackGlory/extra-tags/compare/v0.2.2...v0.2.3) (2021-12-12)
 
 ### [0.2.2](https://github.com/BlackGlory/extra-tags/compare/v0.2.1...v0.2.2) (2021-07-12)
