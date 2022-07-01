@@ -1,7 +1,5 @@
 # extra-tags
-
 ## Install
-
 ```sh
 npm install --save extra-tags
 # or
@@ -9,7 +7,6 @@ yarn add extra-tags
 ```
 
 ## API
-
 ```ts
 type TagParameters<T> = [strings: TemplateStringsArray, ...values: T[]]
 
@@ -19,9 +16,7 @@ type Transformer<T, U> = (strings: TemplateStringsArray, ...values: T[]) => TagP
 ```
 
 ### Converter
-
 #### removeExtraIndents
-
 ```ts
 function removeExtraIndents(
   text: string
@@ -30,47 +25,38 @@ function removeExtraIndents(
 ```
 
 #### removeBlankLines
-
 ```ts
 function removeBlankLines(text: string): string
 ```
 
 #### removeMultilineHeader
-
 ```ts
 function removeMultilineHeader(text: string): string
 ```
 
 #### removeMultilineFooter
-
 ```ts
 function removeMultilineFooter(text: string): string
 ```
 
 ### Reducer
-
 #### concat
-
 ```ts
 function concat(strings: TemplateStringsArray, ...values: unknown[]): string
 ```
 
 #### dedent
-
 ```ts
 function dedent(strings: TemplateStringsArray, ...values: unknown[]): string
 ```
 
 #### oneline
-
 ```ts
 function oneline(strings: TemplateStringsArray, ...values: unknown[]): string
 ```
 
 ### Transformer
-
 #### removeFalsyValues
-
 ```ts
 function removeFalsyValues<T>(
   strings: TemplateStringsArray
@@ -79,7 +65,6 @@ function removeFalsyValues<T>(
 ```
 
 #### valuesToStrings
-
 ```ts
 function stringifyValues(
   strings: TemplateStringsArray
@@ -88,7 +73,6 @@ function stringifyValues(
 ```
 
 #### indentMultilineValues
-
 ```ts
 function indentMultilineValues(
   strings: TemplateStringsArray
@@ -97,9 +81,7 @@ function indentMultilineValues(
 ```
 
 ### Transformer Creator
-
 #### map
-
 ```ts
 function map<T, U>(
   fn: (value: T, index: number) => U
@@ -107,7 +89,6 @@ function map<T, U>(
 ```
 
 #### filter
-
 ```ts
 function filter<T, U extends T = T>(
   predicate: (value: T, index: number) => boolean
