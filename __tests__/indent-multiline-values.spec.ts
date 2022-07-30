@@ -15,9 +15,11 @@ describe(`
     const [strings, ...values] = result
 
     expect([...strings]).toEqual([
-      '\n' + ' '.repeat(6) + 'a' + '\n'
+      '\n'
+    + ' '.repeat(6) + 'a' + '\n'
     + ' '.repeat(6)
-    , '\n' + ' '.repeat(6) + 'c' + '\n'
+    , '\n'
+    + ' '.repeat(6) + 'c' + '\n'
     + ' '.repeat(4)
     ])
     expect(values).toEqual(['b'])
@@ -32,9 +34,11 @@ describe(`
     const [strings, ...values] = result
 
     expect([...strings]).toEqual([
-      '\n' + ' '.repeat(6) + 'a' + '\n'
+      '\n'
+    + ' '.repeat(6) + 'a' + '\n'
     + ' '.repeat(6)
-    , '\n' + ' '.repeat(6) + 'd' + '\n'
+    , '\n'
+    + ' '.repeat(6) + 'd' + '\n'
     + ' '.repeat(4)
     ])
     expect(values).toEqual([
