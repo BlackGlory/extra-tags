@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.6](https://github.com/BlackGlory/extra-tags/compare/v0.2.5...v0.2.6) (2022-10-18)
+
+
+### Features
+
+* add valuesToJSON ([aba52c6](https://github.com/BlackGlory/extra-tags/commit/aba52c6f02ef33b3fae196a00c6fc2d2e3f67549))
+
 ### [0.2.5](https://github.com/BlackGlory/extra-tags/compare/v0.2.4...v0.2.5) (2022-08-01)
 
 ### [0.2.4](https://github.com/BlackGlory/extra-tags/compare/v0.2.3...v0.2.4) (2021-12-19)
