@@ -14,6 +14,47 @@ type Reducer<T, U> = (strings: TemplateStringsArray, ...values: T[]) => U
 type Transformer<T, U> = (strings: TemplateStringsArray, ...values: T[]) => TagParameters<U>
 ```
 
+### Reducer
+#### concat
+```ts
+function concat(strings: TemplateStringsArray, ...values: unknown[]): string
+```
+
+Example:
+```ts
+concat`a${'b'}c${undefined}e`
+// 'abcundefinede'
+```
+
+#### dedent
+```ts
+function dedent(strings: TemplateStringsArray, ...values: unknown[]): string
+```
+
+Example:
+```ts
+dedent`
+  hello
+  world
+`
+//   'hello' + '\n'
+// + 'world'
+```
+
+#### oneline
+```ts
+function oneline(strings: TemplateStringsArray, ...values: unknown[]): string
+```
+
+Example:
+```ts
+oneline`
+  hello
+  world
+`
+// 'hello world'
+```
+
 ### Converter
 #### removeExtraIndents
 ```ts
@@ -87,47 +128,6 @@ removeMultilineFooter(
 // + 'a'
 ```
 
-### Reducer
-#### concat
-```ts
-function concat(strings: TemplateStringsArray, ...values: unknown[]): string
-```
-
-Example:
-```ts
-concat`a${'b'}c${undefined}e`
-// 'abcundefinede'
-```
-
-#### dedent
-```ts
-function dedent(strings: TemplateStringsArray, ...values: unknown[]): string
-```
-
-Example:
-```ts
-dedent`
-  hello
-  world
-`
-//   'hello' + '\n'
-// + 'world'
-```
-
-#### oneline
-```ts
-function oneline(strings: TemplateStringsArray, ...values: unknown[]): string
-```
-
-Example:
-```ts
-oneline`
-  hello
-  world
-`
-// 'hello world'
-```
-
 ### Transformer
 #### removeFalsyValues
 ```ts
@@ -145,7 +145,7 @@ const [strings, ...values] = removeFalsyValues`a${undefined}b${'c'}d`
 
 #### valuesToStrings
 ```ts
-function stringifyValues(
+function valuesToStrings(
   strings: TemplateStringsArray
 , ...values: unknown[]
 ): TagParameters<string>
@@ -156,6 +156,22 @@ Example:
 const [strings, ...values] = valuesToStrings`a${'b'}c${undefined}e`
 // strings: ['a', 'c', 'e']
 // values: ['b', 'undefined']
+```
+
+### valuesToJSON
+```ts
+function valuesToJSON(
+  strings: TemplateStringsArray
+, ...values: unknown[]
+): TagParameters<string>
+```
+
+Example:
+```ts
+const [strings, ...values] = valuesToJSON`a${'b'}c${4}e${[6]}f`
+
+// strings: ['a', 'c', 'e', 'f']
+// values: ['"b"', '4', '[6]']
 ```
 
 #### indentMultilineValues
