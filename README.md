@@ -169,7 +169,6 @@ function valuesToJSON(
 Example:
 ```ts
 const [strings, ...values] = valuesToJSON`a${'b'}c${4}e${[6]}f`
-
 // strings: ['a', 'c', 'e', 'f']
 // values: ['"b"', '4', '[6]']
 ```
@@ -179,7 +178,7 @@ const [strings, ...values] = valuesToJSON`a${'b'}c${4}e${[6]}f`
 function indentMultilineValues(
   strings: TemplateStringsArray
 , ...values: string[]
-): TagParameters<string> {
+): TagParameters<string>
 ```
 
 Example:
