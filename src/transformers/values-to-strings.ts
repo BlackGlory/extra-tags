@@ -1,4 +1,4 @@
-import { TagParameters } from './types'
+import { TagParameters } from '@src/types'
 
 export function valuesToStrings(
   strings: TemplateStringsArray

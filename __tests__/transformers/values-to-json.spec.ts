@@ -1,4 +1,4 @@
-import { valuesToJSON } from '@src/values-to-json'
+import { valuesToJSON } from '@transformers/values-to-json'
 
 test(`
   valuesToJSON(

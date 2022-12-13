@@ -1,4 +1,4 @@
-import { TagParameters } from './types'
+import { TagParameters } from '@src/types'
 import { createTemplateStringsArray } from '@utils/create-template-strings-array'
 import { last } from '@utils/last'
 

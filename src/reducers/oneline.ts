@@ -1,9 +1,9 @@
-import { removeMultilineHeader } from './remove-multiline-header'
-import { removeMultilineFooter } from './remove-multiline-footer'
-import { removeExtraIndents } from './remove-extra-indents'
-import { concat } from './concat'
-import { valuesToStrings } from './values-to-strings'
-import { indentMultilineValues } from './indent-multiline-values'
+import { removeMultilineHeader } from '@converters/remove-multiline-header'
+import { removeMultilineFooter } from '@converters/remove-multiline-footer'
+import { removeExtraIndents } from '@converters/remove-extra-indents'
+import { concat } from '@reducers/concat'
+import { valuesToStrings } from '@transformers/values-to-strings'
+import { indentMultilineValues } from '@transformers/indent-multiline-values'
 
 export function oneline(strings: TemplateStringsArray, ...values: unknown[]): string {
   const text = removeMultilineFooter(

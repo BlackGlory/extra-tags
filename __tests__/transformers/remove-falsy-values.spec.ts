@@ -1,4 +1,4 @@
-import { removeFalsyValues } from '@src/remove-falsy-values'
+import { removeFalsyValues } from '@transformers/remove-falsy-values'
 
 test(`
   removeFalsyValues<T>(

@@ -1,4 +1,4 @@
-import { oneline } from '@src/oneline'
+import { oneline } from '@reducers/oneline'
 
 describe('oneline(strings: TemplateStringsArray, ...values: unknown[]): string', () => {
   describe('no indentation', () => {

@@ -1,4 +1,4 @@
-import { concat } from '@src/concat'
+import { concat } from '@reducers/concat'
 
 test('concat(strings: TemplateStringsArray, ...values: string[]): string', () => {
   const result = concat`a${'b'}c${undefined}e`

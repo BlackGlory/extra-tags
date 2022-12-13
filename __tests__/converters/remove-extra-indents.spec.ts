@@ -1,4 +1,4 @@
-import { removeExtraIndents } from '@src/remove-extra-indents'
+import { removeExtraIndents } from '@converters/remove-extra-indents'
 
 describe('removeExtraIndents(text: string): string', () => {
   describe('no indentation', () => {

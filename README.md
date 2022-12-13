@@ -14,7 +14,7 @@ type Reducer<T, U> = (strings: TemplateStringsArray, ...values: T[]) => U
 type Transformer<T, U> = (strings: TemplateStringsArray, ...values: T[]) => TagParameters<U>
 ```
 
-### Reducer
+### Reducers
 #### concat
 ```ts
 function concat(strings: TemplateStringsArray, ...values: unknown[]): string
@@ -55,7 +55,7 @@ oneline`
 // 'hello world'
 ```
 
-### Converter
+### Converters
 #### removeExtraIndents
 ```ts
 function removeExtraIndents(
@@ -128,7 +128,7 @@ removeMultilineFooter(
 // + 'a'
 ```
 
-### Transformer
+### Transformers
 #### removeFalsyValues
 ```ts
 function removeFalsyValues<T>(
@@ -200,7 +200,7 @@ const [strings, ...values] = indentMultilineValues`
 // ]
 ```
 
-### Transformer Creator
+### Operators
 #### map
 ```ts
 function map<T, U>(

@@ -1,4 +1,4 @@
-import { removeMultilineFooter } from '@src/remove-multiline-footer'
+import { removeMultilineFooter } from '@converters/remove-multiline-footer'
 
 describe('removeMultilineFooter(text: string): string', () => {
   describe('mutliline footer exists', () => {

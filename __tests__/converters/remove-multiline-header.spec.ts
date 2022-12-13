@@ -1,4 +1,4 @@
-import { removeMultilineHeader } from '@src/remove-multiline-header'
+import { removeMultilineHeader } from '@converters/remove-multiline-header'
 
 describe('removeMultilineHeader(text: string): string', () => {
   describe('multiline header exists', () => {
