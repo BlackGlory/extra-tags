@@ -1,7 +1,9 @@
 {
   "name": "extra-tags",
-  "version": "0.2.6",
-  "files": ["lib"],
+  "version": "0.2.7",
+  "files": [
+    "lib"
+  ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": "git@github.com:BlackGlory/extra-tags.git",
