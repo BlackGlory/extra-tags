@@ -45,6 +45,7 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "@blackglory/prelude": "^0.1.8"
+    "@blackglory/prelude": "^0.1.8",
+    "extra-utils": "^3.6.0"
   }
 }

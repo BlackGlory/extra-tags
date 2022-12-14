@@ -1,6 +1,4 @@
-import { removeMultilineHeader } from '@converters/remove-multiline-header'
-import { removeMultilineFooter } from '@converters/remove-multiline-footer'
-import { removeExtraIndents } from '@converters/remove-extra-indents'
+import { removeExtraIndents, removeLeadingBlankLines, removeTrailingBlankLines } from 'extra-utils'
 import { concat } from '@reducers/concat'
 import { map } from '@operators/map'
 import { indentMultilineValues } from '@operators/indent-multiline-values'
@@ -8,8 +6,8 @@ import { indentMultilineValues } from '@operators/indent-multiline-values'
 export function dedent(strings: TemplateStringsArray, ...values: unknown[]): string {
   return (
     removeExtraIndents(
-      removeMultilineFooter(
-        removeMultilineHeader(
+      removeLeadingBlankLines(
+        removeTrailingBlankLines(
           concat(
             ...indentMultilineValues(
               ...map(String, strings, ...values)
