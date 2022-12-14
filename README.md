@@ -163,50 +163,6 @@ function filter<T, U extends T = T>(
 ): TagParameters<U>
 ```
 
-#### removeFalsyValues
-```ts
-function removeFalsyValues<T>(
-  strings: TemplateStringsArray
-, ...values: T[]
-): TagParameters<Exclude<T, Falsy>>
-```
-
-```ts
-const [strings, ...values] = removeFalsyValues`a${undefined}b${'c'}d`
-// strings: ['ab', 'd']
-// values: ['c']
-```
-
-#### valuesToStrings
-```ts
-function valuesToStrings(
-  strings: TemplateStringsArray
-, ...values: unknown[]
-): TagParameters<string>
-```
-
-Example:
-```ts
-const [strings, ...values] = valuesToStrings`a${'b'}c${undefined}e`
-// strings: ['a', 'c', 'e']
-// values: ['b', 'undefined']
-```
-
-### valuesToJSON
-```ts
-function valuesToJSON(
-  strings: TemplateStringsArray
-, ...values: unknown[]
-): TagParameters<string>
-```
-
-Example:
-```ts
-const [strings, ...values] = valuesToJSON`a${'b'}c${4}e${[6]}f`
-// strings: ['a', 'c', 'e', 'f']
-// values: ['"b"', '4', '[6]']
-```
-
 #### indentMultilineValues
 ```ts
 function indentMultilineValues(

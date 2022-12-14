@@ -2,7 +2,7 @@ import { removeMultilineHeader } from '@converters/remove-multiline-header'
 import { removeMultilineFooter } from '@converters/remove-multiline-footer'
 import { removeExtraIndents } from '@converters/remove-extra-indents'
 import { concat } from '@reducers/concat'
-import { valuesToStrings } from '@operators/values-to-strings'
+import { map } from '@operators/map'
 import { indentMultilineValues } from '@operators/indent-multiline-values'
 
 export function dedent(strings: TemplateStringsArray, ...values: unknown[]): string {
@@ -12,7 +12,7 @@ export function dedent(strings: TemplateStringsArray, ...values: unknown[]): str
         removeMultilineHeader(
           concat(
             ...indentMultilineValues(
-              ...valuesToStrings(strings, ...values)
+              ...map(String, strings, ...values)
             )
           )
         )
