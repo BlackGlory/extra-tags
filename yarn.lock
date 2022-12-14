@@ -2661,10 +2661,10 @@ extra-utils@^3.0.0, extra-utils@^3.3.0, extra-utils@^3.4.0, extra-utils@^3.5.1:
     justypes "^3.1.2"
     lodash "^4.17.21"
 
-extra-utils@^3.6.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/extra-utils/-/extra-utils-3.6.0.tgz#3a250f676d5bd662880426d08279be22fb6d4e7b"
-  integrity sha512-qrszTqg+Kh6xb3ODv6iQJgCkCdZydPwtynWKSDwNM3emMeZdk5Z2eABWgjse/bmnTkW8Wr0CfmHu4/CwhUflng==
+extra-utils@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/extra-utils/-/extra-utils-3.7.0.tgz#eed4cd1efeb1260bcd611e9294660f003d394793"
+  integrity sha512-oknUj+tiacZHlvuTKhjmXCDXCaB8xzOlJMNVAH2211N1OVsXty09QhI+884oCmZaALIiyXAio1itDWmPfv9T4A==
   dependencies:
     justypes "^3.1.2"
     lodash "^4.17.21"

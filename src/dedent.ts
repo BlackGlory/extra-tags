@@ -14,8 +14,8 @@ export function dedent(strings: TemplateStringsArray, ...values: unknown[]): str
   , params => map(String, ...params)
   , params => indentMultilineValues(...params)
   , params => concat(...params)
-  , removeLeadingBlankLines
-  , removeTrailingBlankLines
+  , text => removeLeadingBlankLines(text, 1)
+  , text => removeTrailingBlankLines(text, 1)
   , text => removeExtraIndents(text, { ignoreBlankLines: true })
   )
 }

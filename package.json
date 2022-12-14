@@ -46,6 +46,6 @@
   },
   "dependencies": {
     "@blackglory/prelude": "^0.1.8",
-    "extra-utils": "^3.6.0"
+    "extra-utils": "^3.7.0"
   }
 }

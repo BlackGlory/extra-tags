@@ -76,7 +76,7 @@ function oneline(strings: TemplateStringsArray, ...values: unknown[]): string
 
 Example:
 ```ts
-oneline`
+oneline(' ')`
   hello
   world
 `
