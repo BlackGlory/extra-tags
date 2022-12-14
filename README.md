@@ -8,9 +8,9 @@ yarn add extra-tags
 
 ## API
 ```ts
-type TagParameters<T> = [strings: TemplateStringsArray, ...values: T[]]
-type Converter<T, U> = (value: T) => U
 type Reducer<T, U> = (strings: TemplateStringsArray, ...values: T[]) => U
+
+type TagParameters<T> = [strings: TemplateStringsArray, ...values: T[]]
 type Transformer<T, U> = (strings: TemplateStringsArray, ...values: T[]) => TagParameters<U>
 ```
 
@@ -76,7 +76,7 @@ function javascript(strings: TemplateStringsArray, ...values: Value[]): string
 ```ts
 function removeExtraIndents(
   text: string
-, { ignoreBlankLines = false }: { ignoreBlankLines?: boolean } = {}
+, options?: { ignoreBlankLines: boolean = false }
 ): string
 ```
 
