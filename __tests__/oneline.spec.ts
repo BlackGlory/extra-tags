@@ -1,6 +1,6 @@
 import { oneline } from '@src/oneline'
 
-describe('oneline(strings: TemplateStringsArray, ...values: unknown[]): string', () => {
+describe('oneline', () => {
   describe('no indentation', () => {
     test('empty', () => {
       const result = oneline(' ')``

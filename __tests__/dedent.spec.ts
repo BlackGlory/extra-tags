@@ -1,6 +1,6 @@
 import { dedent } from '@src/dedent'
 
-describe('dedent(strings: TemplateStringsArray, ...values: unknown[]): string', () => {
+describe('dedent', () => {
   describe('no indentation', () => {
     test('empty', () => {
       const result = dedent``

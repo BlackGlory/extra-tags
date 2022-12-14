@@ -1,11 +1,6 @@
 import { indentMultilineValues } from '@src/indent-multiline-values'
 
-describe(`
-  indentMultilineValues(
-    strings: TemplateStringsArray
-  , ...values: string[]
-  ): TagParameters<string> {
-`, () => {
+describe('indentMultilineValues', () => {
   test('single-line value', () => {
     const result = indentMultilineValues`
       a

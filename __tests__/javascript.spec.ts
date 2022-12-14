@@ -1,6 +1,6 @@
 import { javascript } from '@src/javascript'
 
-describe(`javascript(strings: TemplateStringsArray, ...values: Value[]): string`, () => {
+describe('javascript', () => {
   test('number', () => {
     const result = javascript`
       ${1}
