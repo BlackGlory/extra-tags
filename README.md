@@ -42,10 +42,16 @@ function filter<T, U extends T = T>(
 function concat(strings: TemplateStringsArray, ...values: unknown[]): string
 ```
 
-Example:
+It is equivalent to `Array.prototype.concat` for template arguments.
+
 ```ts
-concat`a${'b'}c${undefined}e`
-// 'abcundefinede'
+// It doesn't make sense to use it as a tag function,
+// because it equivalent to `a${'b'}c${'d'}e`.
+concat`a${'b'}c${'d'}e`
+// 'abcde'
+
+concat(strings, ...values)
+// 'abcde'
 ```
 
 ### dedent

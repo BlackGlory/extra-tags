@@ -1,7 +1,7 @@
 import { concat } from '@src/concat'
 
-test('concat(strings: TemplateStringsArray, ...values: string[]): string', () => {
-  const result = concat`a${'b'}c${undefined}e`
+test('concat', () => {
+  const result = concat`a${'b'}c${'d'}e`
 
-  expect(result).toBe('abcundefinede')
+  expect(result).toBe('abcde')
 })

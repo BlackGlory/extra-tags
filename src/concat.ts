@@ -1,11 +1,13 @@
 import { last } from '@utils/last'
 
 export function concat(strings: TemplateStringsArray, ...values: unknown[]): string {
-  let result = ''
+  const arr: string[] = []
+
   for (let i = 0; i < values.length; i++) {
-    result += strings[i]
-    result += values[i]
+    arr.push(strings[i])
+    arr.push(`${values[i]}`)
   }
-  result += last(strings)
-  return result
+  arr.push(last(strings))
+
+  return arr.join('')
 }
