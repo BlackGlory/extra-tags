@@ -3,13 +3,13 @@ import { oneline } from '@src/oneline'
 describe('oneline(strings: TemplateStringsArray, ...values: unknown[]): string', () => {
   describe('no indentation', () => {
     test('empty', () => {
-      const result = oneline``
+      const result = oneline(' ')``
 
       expect(result).toBe('')
     })
 
     test('single-line', () => {
-      const result = oneline`hello world`
+      const result = oneline(' ')`hello world`
 
       expect(result).toBe('hello world')
     })
@@ -17,13 +17,13 @@ describe('oneline(strings: TemplateStringsArray, ...values: unknown[]): string',
 
   describe('indented', () => {
     test('single-line', () => {
-      const result = oneline` hello world `
+      const result = oneline(' ')` hello world `
 
       expect(result).toBe(' hello world ')
     })
 
     test('multi-line strings', () => {
-      const result = oneline`
+      const result = oneline(' ')`
         hello
         world
       `
@@ -32,7 +32,7 @@ describe('oneline(strings: TemplateStringsArray, ...values: unknown[]): string',
     })
 
     test('multi-line strings with blank lines', () => {
-      const result = oneline`
+      const result = oneline(' ')`
         hello
 
         world
@@ -42,7 +42,7 @@ describe('oneline(strings: TemplateStringsArray, ...values: unknown[]): string',
     })
 
     test('multi-line values', () => {
-      const result = oneline`
+      const result = oneline(' ')`
         a
         ${'b\nc'}
         d

@@ -11,30 +11,30 @@ yarn add extra-tags
 ```ts
 function map<T, U>(
   fn: (value: T, index: number) => U
+, strings: TemplateStringsArray
+, ...values: T[]
+): [strings: TemplateStringsArray, ...values: U[]]
+function map<T, U>(
+  fn: (value: T, index: number) => U
 ): (
   strings: TemplateStringsArray
   , ...values: T[]
 ) => [strings: TemplateStringsArray, ...values: U[]]
-function map<T, U>(
-  fn: (value: T, index: number) => U
-, strings: TemplateStringsArray
-, ...values: T[]
-): [strings: TemplateStringsArray, ...values: U[]]
 ```
 
 ### filter
 ```ts
 function filter<T, U extends T = T>(
   predicate: (value: T, index: number) => boolean
+, strings: TemplateStringsArray
+, ...values: T[]
+): [strings: TemplateStringsArray, ...values: U[]]
+function filter<T, U extends T = T>(
+  predicate: (value: T, index: number) => boolean
 ): (
   strings: TemplateStringsArray
 , ...values: T[]
 ) => [strings: TemplateStringsArray, ...values: U[]]
-function filter<T, U extends T = T>(
-  predicate: (value: T, index: number) => boolean
-, strings: TemplateStringsArray
-, ...values: T[]
-): [strings: TemplateStringsArray, ...values: U[]]
 ```
 
 ### concat
@@ -71,6 +71,14 @@ dedent`
 
 ### oneline
 ```ts
+function oneline(
+  separator: string
+, strings: TemplateStringsArray
+, ...values: unknown[]
+): string
+function oneline(
+  separator: string
+): (strings: TemplateStringsArray, ...values: unknown[]) => string
 function oneline(strings: TemplateStringsArray, ...values: unknown[]): string
 ```
 

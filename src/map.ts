@@ -1,14 +1,14 @@
 export function map<T, U>(
   fn: (value: T, index: number) => U
+, strings: TemplateStringsArray
+, ...values: T[]
+): [strings: TemplateStringsArray, ...values: U[]]
+export function map<T, U>(
+  fn: (value: T, index: number) => U
 ): (
   strings: TemplateStringsArray
 , ...values: T[]
 ) => [strings: TemplateStringsArray, ...values: U[]]
-export function map<T, U>(
-  fn: (value: T, index: number) => U
-, strings: TemplateStringsArray
-, ...values: T[]
-): [strings: TemplateStringsArray, ...values: U[]]
 export function map<T, U>(...args:
 | [fn: (value: T, index: number) => U]
 | [

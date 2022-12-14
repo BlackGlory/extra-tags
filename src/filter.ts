@@ -3,15 +3,15 @@ import { last } from '@utils/last'
 
 export function filter<T, U extends T = T>(
   predicate: (value: T, index: number) => boolean
+, strings: TemplateStringsArray
+, ...values: T[]
+): [strings: TemplateStringsArray, ...values: U[]]
+export function filter<T, U extends T = T>(
+  predicate: (value: T, index: number) => boolean
 ): (
   strings: TemplateStringsArray
 , ...values: T[]
 ) => [strings: TemplateStringsArray, ...values: U[]]
-export function filter<T, U extends T = T>(
-  predicate: (value: T, index: number) => boolean
-, strings: TemplateStringsArray
-, ...values: T[]
-): [strings: TemplateStringsArray, ...values: U[]]
 export function filter<T, U extends T = T>(...args:
 | [predicate: (value: T, index: number) => boolean]
 | [
