@@ -9,16 +9,15 @@ import { map } from '@src/map'
 import { indentMultilineValues } from '@src/indent-multiline-values'
 
 export function oneline(strings: TemplateStringsArray, ...values: unknown[]): string {
-  const text = pipe(
+  return pipe(
     [strings, ...values] as const
   , params => map(String, ...params)
   , params => indentMultilineValues(...params)
   , params => concat(...params)
   , removeLeadingBlankLines
   , removeTrailingBlankLines
+  , text => text.includes('\n')
+          ? removeExtraIndents(text, { ignoreBlankLines: true }).replace(/\n+/g, ' ')
+          : text
   )
-
-  return text.includes('\n')
-       ? removeExtraIndents(text, { ignoreBlankLines: true }).replace(/\n+/g, ' ')
-       : text
 }
