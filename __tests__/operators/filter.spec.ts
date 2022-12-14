@@ -1,16 +1,11 @@
-import { filter } from '@creators/filter'
+import { filter } from '@operators/filter'
+import { collect } from '@test/utils'
 
-describe(`
-  filter<T, U extends T = T>(
-    predicate: (value: T, index: number) => boolean
-  ): (strings: TemplateStringsArray, ...values: T[]) => TagParameters<U>
-`, () => {
+describe('filter', () => {
   test('skip the first value', () => {
     const fn = jest.fn(x => typeof x !== 'number')
 
-    const tag = filter(fn)
-    const result = tag`a${0}b${'c'}d`
-    const [strings, ...values] = result
+    const [strings, ...values] = filter(fn, ...collect`a${0}b${'c'}d`)
 
     expect(fn).nthCalledWith(1, 0, 0)
     expect(fn).nthCalledWith(2, 'c', 1)
@@ -22,9 +17,7 @@ describe(`
   test('skip the last value', () => {
     const fn = jest.fn(x => typeof x !== 'number')
 
-    const tag = filter(fn)
-    const result = tag`a${'b'}c${0}d`
-    const [strings, ...values] = result
+    const [strings, ...values] = filter(fn, ...collect`a${'b'}c${0}d`)
 
     expect(fn).nthCalledWith(1, 'b', 0)
     expect(fn).nthCalledWith(2, 0, 1)

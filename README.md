@@ -216,41 +216,21 @@ const [strings, ...values] = indentMultilineValues`
 // ]
 ```
 
-### Creators
+### Operators
 #### map
 ```ts
 function map<T, U>(
   fn: (value: T, index: number) => U
-): (strings: TemplateStringsArray, ...values: T[]) => TagParameters<U>
-```
-
-Example:
-```ts
-const tag = map(double)
-const [strings, ...values] = tag`a${'b'}c${'d'}e`
-// strings: ['a', 'c', 'e']
-// values: ['bb', 'dd']
-
-function double(x) {
-  return `${x}${x}`
-}
+, strings: TemplateStringsArray
+, ...values: T[]
+): TagParameters<U>
 ```
 
 #### filter
 ```ts
 function filter<T, U extends T = T>(
   predicate: (value: T, index: number) => boolean
-): (strings: TemplateStringsArray, ...values: T[]) => TagParameters<U>
-```
-
-Example:
-```ts
-const tag = filter(isntNumber)
-const [strings, ...values] = tag`a${0}b${'c'}d`
-// strings: ['ab', 'd']
-// values: ['c']
-
-function isntNumber(x) {
-  return typeof x !== 'number'
-}
+, strings: TemplateStringsArray
+, ...values: T[]
+): TagParameters<U>
 ```

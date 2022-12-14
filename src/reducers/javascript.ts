@@ -1,4 +1,4 @@
-import { map } from '@creators/map'
+import { map } from '@operators/map'
 import { dedent } from '@reducers/dedent'
 import { isArray, isObject, isFunction, isString, isBigInt } from '@blackglory/types'
 
@@ -14,7 +14,7 @@ export type Value =
 | Value[]
 
 export function javascript(strings: TemplateStringsArray, ...values: Value[]): string {
-  return dedent(...map(stringify)(strings, ...values))
+  return dedent(...map(stringify, strings, ...values))
 }
 
 function stringify(val: Value): string {
