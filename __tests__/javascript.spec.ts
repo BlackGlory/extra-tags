@@ -1,6 +1,14 @@
 import { javascript } from '@src/javascript'
 
 describe('javascript', () => {
+  test('string', () => {
+    const result = javascript`
+      ${'str'}
+    `
+
+    expect(result).toBe('"str"')
+  })
+
   test('number', () => {
     const result = javascript`
       ${1}
@@ -9,12 +17,12 @@ describe('javascript', () => {
     expect(result).toBe('1')
   })
 
-  test('string', () => {
+  test('bigint', () => {
     const result = javascript`
-      ${'str'}
+      ${BigInt(1)}
     `
 
-    expect(result).toBe('"str"')
+    expect(result).toBe('BigInt("1")')
   })
 
   test('boolean', () => {
@@ -25,14 +33,6 @@ describe('javascript', () => {
     expect(result).toBe('true')
   })
 
-  test('undefined', () => {
-    const result = javascript`
-      ${undefined}
-    `
-
-    expect(result).toBe('undefined')
-  })
-
   test('null', () => {
     const result = javascript`
       ${null}
@@ -41,12 +41,20 @@ describe('javascript', () => {
     expect(result).toBe('null')
   })
 
+  test('undefined', () => {
+    const result = javascript`
+      ${undefined}
+    `
+
+    expect(result).toBe('undefined')
+  })
+
   test('object', () => {
     const result = javascript`
       ${{ key: 'value' }}
     `
 
-    expect(result).toBe('{"key":"value"}')
+    expect(result).toBe('{"key": "value"}')
   })
 
   test('array', () => {
@@ -55,14 +63,6 @@ describe('javascript', () => {
     `
 
     expect(result).toBe('[1,2,3]')
-  })
-
-  test('bigint', () => {
-    const result = javascript`
-      ${BigInt(1)}
-    `
-
-    expect(result).toBe('BigInt("1")')
   })
 
   test('function', () => {

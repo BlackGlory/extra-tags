@@ -59,7 +59,6 @@ concat(strings, ...values)
 function dedent(strings: TemplateStringsArray, ...values: unknown[]): string
 ```
 
-Example:
 ```ts
 dedent`
   hello
@@ -82,7 +81,6 @@ function oneline(
 function oneline(strings: TemplateStringsArray, ...values: unknown[]): string
 ```
 
-Example:
 ```ts
 oneline(' ')`
   hello
@@ -99,7 +97,6 @@ function indentMultilineValues(
 ): [strings: TemplateStringsArray, ...values: string[]]
 ```
 
-Example:
 ```ts
 const [strings, ...values] = indentMultilineValues`
   a
@@ -120,7 +117,7 @@ const [strings, ...values] = indentMultilineValues`
 
 ### javascript
 ```ts
-type Value =
+type JavaScriptValue =
 | string
 | number
 | boolean
@@ -128,8 +125,17 @@ type Value =
 | bigint
 | undefined
 | ((args: any) => any)
-| { [property: string]: Value }
-| Value[]
+| { [property: string]: JavaScriptValue }
+| JavaScriptValue[]
 
-function javascript(strings: TemplateStringsArray, ...values: Value[]): string
+function javascript(strings: TemplateStringsArray, ...values: JavaScriptValue[]): string
+```
+
+```ts
+javascript`
+  const text = ${'hello world'}
+  console.log(text)
+`
+// const text = "hello world"
+// console.log(text)
 ```
