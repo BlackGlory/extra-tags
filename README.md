@@ -216,7 +216,7 @@ const [strings, ...values] = indentMultilineValues`
 // ]
 ```
 
-### Operators
+### Creators
 #### map
 ```ts
 function map<T, U>(

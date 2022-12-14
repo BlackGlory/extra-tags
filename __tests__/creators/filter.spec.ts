@@ -1,4 +1,4 @@
-import { filter } from '@operators/filter'
+import { filter } from '@creators/filter'
 
 describe(`
   filter<T, U extends T = T>(

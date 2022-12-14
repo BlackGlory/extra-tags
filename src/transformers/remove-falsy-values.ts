@@ -1,4 +1,4 @@
-import { filter } from '@operators/filter'
+import { filter } from '@creators/filter'
 import { TagParameters } from '@src/types'
 import { Falsy } from '@blackglory/prelude'
 

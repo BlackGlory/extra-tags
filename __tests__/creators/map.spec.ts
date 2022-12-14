@@ -1,4 +1,4 @@
-import { map } from '@operators/map'
+import { map } from '@creators/map'
 
 test(`
   map<T, U>(

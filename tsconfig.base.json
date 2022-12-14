@@ -10,7 +10,7 @@
       "@src/*": ["src/*"]
     , "@reducers/*": ["src/reducers/*"]
     , "@converters/*": ["src/converters/*"]
-    , "@operators/*": ["src/operators/*"]
+    , "@creators/*": ["src/creators/*"]
     , "@transformers/*": ["src/transformers/*"]
     , "@utils/*": ["src/utils/*"]
     , "@test/*": ["__tests__/*"]

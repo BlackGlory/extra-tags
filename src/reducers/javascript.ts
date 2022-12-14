@@ -1,4 +1,4 @@
-import { map } from '@operators/map'
+import { map } from '@creators/map'
 import { dedent } from '@reducers/dedent'
 import { isArray, isObject, isFunction, isString, isBigInt } from '@blackglory/types'
 
