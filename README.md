@@ -55,6 +55,22 @@ oneline`
 // 'hello world'
 ```
 
+#### javascript
+```ts
+type Value =
+| string
+| number
+| boolean
+| null
+| bigint
+| undefined
+| ((args: any) => any)
+| { [property: string]: Value }
+| Value[]
+
+function javascript(strings: TemplateStringsArray, ...values: Value[]): string
+```
+
 ### Converters
 #### removeExtraIndents
 ```ts

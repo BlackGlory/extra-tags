@@ -1,6 +1,6 @@
 import { filter } from '@operators/filter'
 import { TagParameters } from '@src/types'
-import { Falsy } from 'justypes'
+import { Falsy } from '@blackglory/prelude'
 
 export function removeFalsyValues<T>(
   strings: TemplateStringsArray
