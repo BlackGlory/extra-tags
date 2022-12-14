@@ -1,4 +1,4 @@
-import { valuesToStrings } from '@transformers/values-to-strings'
+import { valuesToStrings } from '@operators/values-to-strings'
 
 test(`
   valuesToStrings(

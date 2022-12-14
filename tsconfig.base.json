@@ -11,7 +11,6 @@
     , "@reducers/*": ["src/reducers/*"]
     , "@converters/*": ["src/converters/*"]
     , "@operators/*": ["src/operators/*"]
-    , "@transformers/*": ["src/transformers/*"]
     , "@utils/*": ["src/utils/*"]
     , "@test/*": ["__tests__/*"]
     }

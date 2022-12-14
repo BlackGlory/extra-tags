@@ -1,4 +1,4 @@
-import { indentMultilineValues } from '@transformers/indent-multiline-values'
+import { indentMultilineValues } from '@operators/indent-multiline-values'
 
 describe(`
   indentMultilineValues(

@@ -1,4 +1,4 @@
-import { valuesToJSON } from '@transformers/values-to-json'
+import { valuesToJSON } from '@operators/values-to-json'
 
 test(`
   valuesToJSON(
