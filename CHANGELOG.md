@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/BlackGlory/extra-tags/compare/v0.2.7...v0.3.0) (2022-12-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* Renamed `Value` to `JavaScriptValue`
+* The default separator of `oneline` is `''`
+* Removed removeBlankLines, removeExtraIndents, removeMultilineFooter, removeMultilineHeader
+* Removed `removeFalsyValues`, `valuesToJSON`, `valuesToStrings`
+* `filter`, `map` are rewritten
+
+### Features
+
+* add `javascript` ([1469658](https://github.com/BlackGlory/extra-tags/commit/1469658fa0c48fe95a89d4e433b749d83905cabd))
+* improve `oneline` ([483ebc0](https://github.com/BlackGlory/extra-tags/commit/483ebc0b3b0ad9090f8c61a7fe0a3233a3c5b3a7))
+
+
+### Bug Fixes
+
+* edge cases for `dedent` ([46d77b7](https://github.com/BlackGlory/extra-tags/commit/46d77b7faa1dea86a5b1cb0b4d25748f24fedee6))
+
+
+* remove `removeFalsyValues`, `valuesToJSON`, `valuesToStrings` ([ff471c2](https://github.com/BlackGlory/extra-tags/commit/ff471c2ed1d94cb9f08b801b9e97704e5a6b4153))
+* remove functions ([e96fc92](https://github.com/BlackGlory/extra-tags/commit/e96fc922216e8515cd9e1652b2466c08c6623e9a))
+* rename `Value` to `JavaScriptValue` ([1db9256](https://github.com/BlackGlory/extra-tags/commit/1db9256c37a34f8b3d4b43e91d92035c514e33db))
+* rewrite ([bf7e03a](https://github.com/BlackGlory/extra-tags/commit/bf7e03ab6dd7d47511261467969fec979b0eec72))
+
 ### [0.2.7](https://github.com/BlackGlory/extra-tags/compare/v0.2.6...v0.2.7) (2022-12-13)
 
 ### [0.2.6](https://github.com/BlackGlory/extra-tags/compare/v0.2.5...v0.2.6) (2022-10-18)
