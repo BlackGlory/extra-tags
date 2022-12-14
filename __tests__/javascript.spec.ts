@@ -1,4 +1,4 @@
-import { javascript } from '@tags/javascript'
+import { javascript } from '@src/javascript'
 
 describe(`javascript(strings: TemplateStringsArray, ...values: Value[]): string`, () => {
   test('number', () => {

@@ -9,7 +9,8 @@ module.exports = {
   , 'plugin:@typescript-eslint/recommended'
   ]
 , rules: {
-    '@typescript-eslint/ban-types': 'off'
+    'no-inner-declarations': 'off'
+  , '@typescript-eslint/ban-types': 'off'
   , '@typescript-eslint/no-inferrable-types': 'off'
   }
 }

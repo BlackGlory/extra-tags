@@ -1,4 +1,4 @@
-import { indentMultilineValues } from '@operators/indent-multiline-values'
+import { indentMultilineValues } from '@src/indent-multiline-values'
 
 describe(`
   indentMultilineValues(

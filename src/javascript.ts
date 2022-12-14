@@ -1,5 +1,5 @@
-import { map } from '@operators/map'
-import { dedent } from '@tags/dedent'
+import { map } from '@src/map'
+import { dedent } from '@src/dedent'
 import { isArray, isObject, isFunction, isString, isBigInt } from '@blackglory/types'
 
 export type Value =

@@ -4,9 +4,9 @@ import {
 , removeLeadingBlankLines
 , removeTrailingBlankLines
 } from 'extra-utils'
-import { concat } from '@tags/concat'
-import { map } from '@operators/map'
-import { indentMultilineValues } from '@operators/indent-multiline-values'
+import { concat } from '@src/concat'
+import { map } from '@src/map'
+import { indentMultilineValues } from '@src/indent-multiline-values'
 
 export function dedent(strings: TemplateStringsArray, ...values: unknown[]): string {
   return pipe(

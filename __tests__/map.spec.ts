@@ -1,4 +1,4 @@
-import { map } from '@operators/map'
+import { map } from '@src/map'
 import { collect } from '@test/utils'
 
 test('map', () => {

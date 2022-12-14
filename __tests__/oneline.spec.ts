@@ -1,4 +1,4 @@
-import { oneline } from '@tags/oneline'
+import { oneline } from '@src/oneline'
 
 describe('oneline(strings: TemplateStringsArray, ...values: unknown[]): string', () => {
   describe('no indentation', () => {

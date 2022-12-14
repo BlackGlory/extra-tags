@@ -1,4 +1,4 @@
-import { dedent } from '@tags/dedent'
+import { dedent } from '@src/dedent'
 
 describe('dedent(strings: TemplateStringsArray, ...values: unknown[]): string', () => {
   describe('no indentation', () => {

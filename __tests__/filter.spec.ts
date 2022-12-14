@@ -1,4 +1,4 @@
-import { filter } from '@operators/filter'
+import { filter } from '@src/filter'
 import { collect } from '@test/utils'
 
 describe('filter', () => {
