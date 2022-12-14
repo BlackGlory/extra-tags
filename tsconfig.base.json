@@ -8,8 +8,7 @@
   , "baseUrl": "."
   , "paths": {
       "@src/*": ["src/*"]
-    , "@reducers/*": ["src/reducers/*"]
-    , "@converters/*": ["src/converters/*"]
+    , "@tags/*": ["src/tags/*"]
     , "@operators/*": ["src/operators/*"]
     , "@utils/*": ["src/utils/*"]
     , "@test/*": ["__tests__/*"]

@@ -1,4 +1,3 @@
-import { TagParameters } from '@src/types'
 import { createTemplateStringsArray } from '@utils/create-template-strings-array'
 import { last } from '@utils/last'
 
@@ -6,7 +5,7 @@ export function filter<T, U extends T = T>(
   predicate: (value: T, index: number) => boolean
 , strings: TemplateStringsArray
 , ...values: T[]
-): TagParameters<U> {
+): [strings: TemplateStringsArray, ...values: U[]] {
   const newStrings: string[] = []
   const newStringsRaw: string[] = []
   const newValues: U[] = []

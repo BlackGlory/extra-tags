@@ -1,9 +1,7 @@
-import { TagParameters } from '@src/types'
-
 export function indentMultilineValues(
   strings: TemplateStringsArray
 , ...values: string[]
-): TagParameters<string> {
+): [strings: TemplateStringsArray, ...values: string[]] {
   const newValues = values.map((value, i) => {
     if (isMultiline(value)) {
       const indent = getLastLineIndent(strings[i])

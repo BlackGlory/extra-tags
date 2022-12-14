@@ -1,4 +1,4 @@
-import { javascript } from '@reducers/javascript'
+import { javascript } from '@tags/javascript'
 
 describe(`javascript(strings: TemplateStringsArray, ...values: Value[]): string`, () => {
   test('number', () => {

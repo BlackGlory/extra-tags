@@ -1,2 +1,2 @@
-export * from './reducers'
+export * from './tags'
 export * from './operators'

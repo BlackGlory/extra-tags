@@ -7,14 +7,7 @@ yarn add extra-tags
 ```
 
 ## API
-```ts
-type Reducer<T, U> = (strings: TemplateStringsArray, ...values: T[]) => U
-
-type TagParameters<T> = [strings: TemplateStringsArray, ...values: T[]]
-type Transformer<T, U> = (strings: TemplateStringsArray, ...values: T[]) => TagParameters<U>
-```
-
-### Reducers
+### Tags
 #### concat
 ```ts
 function concat(strings: TemplateStringsArray, ...values: unknown[]): string
@@ -78,7 +71,7 @@ function map<T, U>(
   fn: (value: T, index: number) => U
 , strings: TemplateStringsArray
 , ...values: T[]
-): TagParameters<U>
+): [strings: TemplateStringsArray, ...values: U[]]
 ```
 
 #### filter
@@ -87,7 +80,7 @@ function filter<T, U extends T = T>(
   predicate: (value: T, index: number) => boolean
 , strings: TemplateStringsArray
 , ...values: T[]
-): TagParameters<U>
+): [strings: TemplateStringsArray, ...values: U[]]
 ```
 
 #### indentMultilineValues
@@ -95,7 +88,7 @@ function filter<T, U extends T = T>(
 function indentMultilineValues(
   strings: TemplateStringsArray
 , ...values: string[]
-): TagParameters<string>
+): [strings: TemplateStringsArray, ...values: string[]]
 ```
 
 Example:

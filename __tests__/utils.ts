@@ -1,8 +1,6 @@
-import { TagParameters } from '@src/types'
-
 export function collect(
   strings: TemplateStringsArray
 , ...values: unknown[]
-): TagParameters<unknown> {
+): [strings: TemplateStringsArray, ...values: unknown[]] {
   return [strings, ...values]
 }
