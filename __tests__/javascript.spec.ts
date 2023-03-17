@@ -1,4 +1,4 @@
-import { javascript } from '@src/javascript'
+import { javascript } from '@src/javascript.js'
 
 describe('javascript', () => {
   test('string', () => {

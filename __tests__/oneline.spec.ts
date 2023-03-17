@@ -1,4 +1,4 @@
-import { oneline } from '@src/oneline'
+import { oneline } from '@src/oneline.js'
 
 describe('oneline', () => {
   describe('no indentation', () => {

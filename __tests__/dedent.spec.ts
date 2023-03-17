@@ -1,4 +1,4 @@
-import { dedent } from '@src/dedent'
+import { dedent } from '@src/dedent.js'
 
 describe('dedent', () => {
   describe('no indentation', () => {

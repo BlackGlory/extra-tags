@@ -1,5 +1,6 @@
-import { filter } from '@src/filter'
-import { collect } from '@test/utils'
+import { filter } from '@src/filter.js'
+import { collect } from '@test/utils.js'
+import { jest } from '@jest/globals'
 
 describe('filter', () => {
   test('skip the first value', () => {

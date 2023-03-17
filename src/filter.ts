@@ -1,5 +1,5 @@
-import { createTemplateStringsArray } from '@utils/create-template-strings-array'
-import { last } from '@utils/last'
+import { createTemplateStringsArray } from '@utils/create-template-strings-array.js'
+import { last } from '@utils/last.js'
 
 export function filter<T, U extends T = T>(
   predicate: (value: T, index: number) => boolean

@@ -1,6 +1,6 @@
 import { isArray, isObject, isFunction, isString, isBigInt } from '@blackglory/prelude'
-import { map } from '@src/map'
-import { dedent } from '@src/dedent'
+import { map } from '@src/map.js'
+import { dedent } from '@src/dedent.js'
 
 export type JavaScriptValue =
 | string

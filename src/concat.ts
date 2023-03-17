@@ -1,4 +1,4 @@
-import { last } from '@utils/last'
+import { last } from '@utils/last.js'
 
 export function concat(strings: TemplateStringsArray, ...values: unknown[]): string {
   const arr: string[] = []

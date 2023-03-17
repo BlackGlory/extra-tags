@@ -1,4 +1,4 @@
-import { indentMultilineValues } from '@src/indent-multiline-values'
+import { indentMultilineValues } from '@src/indent-multiline-values.js'
 
 describe('indentMultilineValues', () => {
   test('single-line value', () => {
