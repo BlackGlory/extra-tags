@@ -23,121 +23,141 @@ describe('dedent', () => {
       expect(result).toBe('hello world ')
     })
 
-    test('multi-line strings', () => {
-      const result = dedent`
-        hello
-        world
-      `
+    describe('multi-line strings', () => {
+      test('without blank lines', () => {
+        const result = dedent`
+          hello
+          world
+        `
 
-      expect(result).toBe(
-        'hello' + '\n'
-      + 'world'
-      )
+        expect(result).toBe(
+          'hello' + '\n'
+        + 'world'
+        )
+      })
+
+      describe('with blank lines', () => {
+        describe('begin', () => {
+          test('without indentation', () => {
+            const result = dedent`
+
+              hello
+              world
+            `
+
+            expect(result).toBe(
+              '\n'
+            + 'hello' + '\n'
+            + 'world'
+            )
+          })
+
+          test('with indentations', () => {
+            const result = dedent`
+              
+              hello
+              world
+            `
+
+            expect(result).toBe(
+              '\n'
+            + 'hello' + '\n'
+            + 'world'
+            )
+          })
+        })
+
+        describe('middle', () => {
+          test('without indentations', () => {
+            const result = dedent`
+              hello
+
+              world
+            `
+
+            expect(result).toBe(
+              'hello' + '\n'
+            + '\n'
+            + 'world'
+            )
+          })
+
+          test('with indentations', () => {
+            const result = dedent`
+              hello
+              
+              world
+            `
+
+            expect(result).toBe(
+              'hello' + '\n'
+            + '\n'
+            + 'world'
+            )
+          })
+        })
+
+        describe('end', () => {
+          test('without indentations', () => {
+            const result = dedent`
+              hello
+              world
+
+            `
+
+            expect(result).toBe(
+              'hello' + '\n'
+            + 'world' + '\n'
+            )
+          })
+
+          test('with indentations', () => {
+            const result = dedent`
+              hello
+              world
+              
+            `
+
+            expect(result).toBe(
+              'hello' + '\n'
+            + 'world' + '\n'
+            )
+          })
+        })
+      })
     })
 
-    describe('multi-line strings with blank lines', () => {
-      describe('begin', () => {
-        test('without indentation', () => {
-          const result = dedent`
+    describe('multi-line values', () => {
+      test('without indentations', () => {
+        const result = dedent`
+          a
+          ${'b\nc'}
+          d
+        `
 
-            hello
-            world
-          `
-
-          expect(result).toBe(
-            '\n'
-          + 'hello' + '\n'
-          + 'world'
-          )
-        })
-
-        test('with indentations', () => {
-          const result = dedent`
-            
-            hello
-            world
-          `
-
-          expect(result).toBe(
-            '\n'
-          + 'hello' + '\n'
-          + 'world'
-          )
-        })
+        expect(result).toBe(
+          'a' + '\n'
+        + 'b' + '\n'
+        + 'c' + '\n'
+        + 'd'
+        )
       })
 
-      describe('middle', () => {
-        test('without indentations', () => {
-          const result = dedent`
-            hello
+      test('with indentations', () => {
+        const result = dedent`
+          a
+          ${' b\n \n c'}
+          d
+        `
 
-            world
-          `
-
-          expect(result).toBe(
-            'hello' + '\n'
-          + '\n'
-          + 'world'
-          )
-        })
-
-        test('with indentations', () => {
-          const result = dedent`
-            hello
-            
-            world
-          `
-
-          expect(result).toBe(
-            'hello' + '\n'
-          + '\n'
-          + 'world'
-          )
-        })
+        expect(result).toBe(
+          'a' + '\n'
+        + ' b' + '\n'
+        + ' \n'
+        + ' c' + '\n'
+        + 'd'
+        )
       })
-
-      describe('end', () => {
-        test('without indentations', () => {
-          const result = dedent`
-            hello
-            world
-
-          `
-
-          expect(result).toBe(
-            'hello' + '\n'
-          + 'world' + '\n'
-          )
-        })
-
-        test('with indentations', () => {
-          const result = dedent`
-            hello
-            world
-            
-          `
-
-          expect(result).toBe(
-            'hello' + '\n'
-          + 'world' + '\n'
-          )
-        })
-      })
-    })
-
-    test('multi-line values', () => {
-      const result = dedent`
-        a
-        ${'b\nc'}
-        d
-      `
-
-      expect(result).toBe(
-        'a' + '\n'
-      + 'b' + '\n'
-      + 'c' + '\n'
-      + 'd'
-      )
     })
   })
 })
