@@ -2,29 +2,29 @@ import { describe, test, expect } from 'vitest'
 import { dedent } from '@src/dedent.js'
 
 describe('dedent', () => {
-  describe('without indentations', () => {
-    test('empty', () => {
-      const result = dedent``
+  test('empty', () => {
+    const result = dedent``
 
-      expect(result).toBe('')
-    })
+    expect(result).toBe('')
+  })
 
-    test('single-line', () => {
+  describe('single line', () => {
+    test('general', () => {
       const result = dedent`hello world`
 
       expect(result).toBe('hello world')
     })
-  })
 
-  describe('with indentations', () => {
-    test('single-line', () => {
+    test('with indentations', () => {
       const result = dedent` hello world `
 
       expect(result).toBe('hello world ')
     })
+  })
 
-    describe('multi-line strings', () => {
-      test('without blank lines', () => {
+  describe('multi lines', () => {
+    describe('without values', () => {
+      test('general', () => {
         const result = dedent`
           hello
           world
@@ -37,8 +37,8 @@ describe('dedent', () => {
       })
 
       describe('with blank lines', () => {
-        describe('begin', () => {
-          test('without indentation', () => {
+        describe('position: begin', () => {
+          test('without indentations', () => {
             const result = dedent`
 
               hello
@@ -67,7 +67,7 @@ describe('dedent', () => {
           })
         })
 
-        describe('middle', () => {
+        describe('position: middle', () => {
           test('without indentations', () => {
             const result = dedent`
               hello
@@ -97,7 +97,7 @@ describe('dedent', () => {
           })
         })
 
-        describe('end', () => {
+        describe('position: end', () => {
           test('without indentations', () => {
             const result = dedent`
               hello
@@ -127,12 +127,12 @@ describe('dedent', () => {
       })
     })
 
-    describe('multi-line values', () => {
-      test('without indentations', () => {
+    describe('with values', () => {
+      test('general', () => {
         const result = dedent`
-          a
+          ${'a'}
           ${'b\nc'}
-          d
+          ${'d'}
         `
 
         expect(result).toBe(
@@ -143,19 +143,56 @@ describe('dedent', () => {
         )
       })
 
-      test('with indentations', () => {
+      test('line with indentations', () => {
         const result = dedent`
-          a
-          ${' b\n \n c'}
-          d
+          ${'a'}
+           ${'b\nc'}
+          ${'d'}
         `
 
         expect(result).toBe(
           'a' + '\n'
         + ' b' + '\n'
-        + ' \n'
         + ' c' + '\n'
         + 'd'
+        )
+      })
+
+      test('value with indentations', () => {
+        const result = dedent`
+          ${'a'}
+          ${' b\n c'}
+          ${'d'}
+        `
+
+        expect(result).toBe(
+          'a' + '\n'
+        + ' b' + '\n'
+        + ' c' + '\n'
+        + 'd'
+        )
+      })
+
+      test('with blank lines', () => {
+        const result = dedent`
+
+          ${'a'}
+
+          ${'b\nc'}
+
+          ${'d'}
+
+        `
+
+        expect(result).toBe(
+          '\n'
+        + 'a' + '\n'
+        + '\n'
+        + 'b' + '\n'
+        + 'c' + '\n'
+        + '\n'
+        + 'd'
+        + '\n'
         )
       })
     })

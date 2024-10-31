@@ -16,10 +16,11 @@ export function indentMultilineValues(
 
 function indentExceptFirstLine(indent: string, text: string): string {
   const lines = text.split('\n')
-  const linesExcpetFirst = lines.slice(1)
+  const linesExcpetFirstLine = lines.slice(1)
+
   return [
     lines[0]
-  , ...linesExcpetFirst.map(x => `${indent}${x}`)
+  , ...linesExcpetFirstLine.map(x => `${indent}${x}`)
   ].join('\n')
 }
 
@@ -28,10 +29,6 @@ function isMultiline(text: string): boolean {
 }
 
 function getLastLineIndent(text: string): string {
-  const result = text.match(/\n(\s+)$/)
-  if (result) {
-    return result[1]
-  } else {
-    return ''
-  }
+  const result = text.match(/\n([ \t]+)$/)
+  return result?.[1] ?? ''
 }
