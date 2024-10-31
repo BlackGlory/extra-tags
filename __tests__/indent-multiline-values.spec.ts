@@ -1,3 +1,4 @@
+import { describe, test, expect } from 'vitest'
 import { indentMultilineValues } from '@src/indent-multiline-values.js'
 
 describe('indentMultilineValues', () => {

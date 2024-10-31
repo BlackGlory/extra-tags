@@ -1,10 +1,10 @@
+import { describe, test, expect, vi } from 'vitest'
 import { filter } from '@src/filter.js'
 import { collect } from '@test/utils.js'
-import { jest } from '@jest/globals'
 
 describe('filter', () => {
   test('skip the first value', () => {
-    const fn = jest.fn(x => typeof x !== 'number')
+    const fn = vi.fn(x => typeof x !== 'number')
 
     const [strings, ...values] = filter(fn, ...collect`a${0}b${'c'}d`)
 
@@ -16,7 +16,7 @@ describe('filter', () => {
   })
 
   test('skip the last value', () => {
-    const fn = jest.fn(x => typeof x !== 'number')
+    const fn = vi.fn(x => typeof x !== 'number')
 
     const [strings, ...values] = filter(fn, ...collect`a${'b'}c${0}d`)
 

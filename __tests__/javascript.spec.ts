@@ -1,3 +1,4 @@
+import { describe, test, expect } from 'vitest'
 import { javascript } from '@src/javascript.js'
 
 describe('javascript', () => {
@@ -70,7 +71,11 @@ describe('javascript', () => {
       ${function hello() { return 'value' }}
     `
 
-    expect(result).toBe("function hello() { return 'value'; }")
+    expect(result).toBe(
+      'function hello() {' + '\n'
+    + '      return "value";' + '\n'
+    + '    }'
+    )
   })
 
   test('arrow function', () => {
@@ -78,6 +83,6 @@ describe('javascript', () => {
       ${() => 'value'}
     `
 
-    expect(result).toBe("() => 'value'")
+    expect(result).toBe('() => "value"')
   })
 })

@@ -1,3 +1,4 @@
+import { test, expect } from 'vitest'
 import { concat } from '@src/concat.js'
 
 test('concat', () => {

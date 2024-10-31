@@ -1,9 +1,9 @@
+import { test, expect, vi } from 'vitest'
 import { map } from '@src/map.js'
 import { collect } from '@test/utils.js'
-import { jest } from '@jest/globals'
 
 test('map', () => {
-  const fn = jest.fn(x => `${x}${x}`)
+  const fn = vi.fn(x => `${x}${x}`)
 
   const [strings, ...values] = map(fn, ...collect`a${'b'}c${'d'}e`)
 

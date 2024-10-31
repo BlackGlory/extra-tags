@@ -1,3 +1,4 @@
+import { describe, test, expect } from 'vitest'
 import { oneline } from '@src/oneline.js'
 
 describe('oneline', () => {
