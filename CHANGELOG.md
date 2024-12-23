@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.2](https://github.com/BlackGlory/extra-tags/compare/v0.5.1...v0.5.2) (2024-12-23)
+
+
+### Features
+
+* **filter:** improve types ([267c0aa](https://github.com/BlackGlory/extra-tags/commit/267c0aaafae9040490b7ee0881cac3f21aa47755))
+* add `fromArray` ([112b087](https://github.com/BlackGlory/extra-tags/commit/112b08750241f6ea61c8374d937010f8e7a28267))
+* improve types ([2298703](https://github.com/BlackGlory/extra-tags/commit/2298703c2a9c031da49277327942d55e6ff969da))
+
 ### [0.5.1](https://github.com/BlackGlory/extra-tags/compare/v0.5.0...v0.5.1) (2024-12-23)
 
 
