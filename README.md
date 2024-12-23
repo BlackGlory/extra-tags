@@ -31,10 +31,20 @@ function filter<T, U extends T = T>(
 ): [strings: TemplateStringsArray, ...values: U[]]
 function filter<T, U extends T = T>(
   predicate: (value: T, index: number) => boolean
-): (
-  strings: TemplateStringsArray
+, strings: ReadonlyArray<string>
 , ...values: T[]
-) => [strings: TemplateStringsArray, ...values: U[]]
+): [strings: ReadonlyArray<string>, ...values: U[]]
+function filter<T, U extends T = T>(
+  predicate: (value: T, index: number) => boolean
+): <Strings extends ReadonlyArray<string>>(
+  strings: Strings
+, ...values: T[]
+) => [
+  strings: Strings extends TemplateStringsArray
+  ? TemplateStringsArray
+  : ReadonlyArray<string>
+, ...values: U[]
+]
 ```
 
 ### array

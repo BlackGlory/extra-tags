@@ -48,8 +48,6 @@
     "vitest": "^2.1.4"
   },
   "dependencies": {
-    "@blackglory/prelude": "^0.4.0",
-    "extra-utils": "^5.16.0",
-    "hotypes": "^0.6.4"
+    "extra-utils": "^5.16.0"
   }
 }

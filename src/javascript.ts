@@ -1,4 +1,4 @@
-import { isArray, isObject, isFunction, isString, isBigInt } from '@blackglory/prelude'
+import { isArray, isObject, isFunction, isString, isBigInt } from 'extra-utils'
 import { map } from '@src/map.js'
 import { dedent } from '@src/dedent.js'
 
