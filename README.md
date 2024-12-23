@@ -7,10 +7,6 @@ yarn add extra-tags
 ```
 
 ## API
-```ts
-type Strings = TemplateStringsArray | string[]
-```
-
 ### map
 ```ts
 function map<T, U, Strings extends ReadonlyArray<string>>(
