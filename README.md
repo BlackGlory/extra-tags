@@ -47,6 +47,19 @@ array`a${1}b${2}c`
 // ['a', 1, 'b', 2, 'c']
 ```
 
+### fromArray
+```ts
+function fromArray<T>(arr: Array<string | T>): [
+  strings: string[]
+, ...values: T[]
+]
+```
+
+```ts
+fromArray(array`a${1}b${2}c`)
+// [['a', 'b', 'c'], 1, 2]
+```
+
 ### concat
 ```ts
 function concat(strings: TemplateStringsArray, ...values: unknown[]): string

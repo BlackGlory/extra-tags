@@ -1,6 +1,7 @@
 export * from './map.js'
 export * from './filter.js'
 export * from './array.js'
+export * from './from-array.js'
 export * from './concat.js'
 export * from './dedent.js'
 export * from './oneline.js'
