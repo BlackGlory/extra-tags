@@ -14,7 +14,7 @@ export type JavaScriptValue =
 | ((...args: unknown[]) => unknown)
 
 export function javascript(
-  strings: TemplateStringsArray
+  strings: ReadonlyArray<string>
 , ...values: JavaScriptValue[]
 ): string {
   return dedent(...map(stringifyJavaScriptValue, strings, ...values))

@@ -1,6 +1,6 @@
 import { last } from '@utils/last.js'
 
-export function concat(strings: TemplateStringsArray, ...values: unknown[]): string {
+export function concat(strings: ReadonlyArray<string>, ...values: unknown[]): string {
   const arr: string[] = []
 
   for (let i = 0; i < values.length; i++) {

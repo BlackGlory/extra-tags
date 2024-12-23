@@ -68,7 +68,7 @@ export function filter<T, U extends T = T>(...args:
   }
 }
 
-function concatWithLastElement(arr: string[], val: string) {
+function concatWithLastElement(arr: string[], val: string): void {
   const lastIndex = arr.length - 1
   arr[lastIndex] = `${arr[lastIndex]}${val}`
 }

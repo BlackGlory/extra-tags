@@ -7,19 +7,23 @@ yarn add extra-tags
 ```
 
 ## API
+```ts
+type Strings = TemplateStringsArray | string[]
+```
+
 ### map
 ```ts
-function map<T, U>(
+function map<T, U, Strings extends ReadonlyArray<string>>(
   fn: (value: T, index: number) => U
-, strings: TemplateStringsArray
+, strings: Strings
 , ...values: T[]
-): [strings: TemplateStringsArray, ...values: U[]]
+): [strings: Strings, ...values: U[]]
 function map<T, U>(
   fn: (value: T, index: number) => U
-): (
-  strings: TemplateStringsArray
-  , ...values: T[]
-) => [strings: TemplateStringsArray, ...values: U[]]
+): <Strings extends ReadonlyArray<string>>(
+  strings: Strings
+, ...values: T[]
+) => [strings: Strings, ...values: U[]]
 ```
 
 ### filter
@@ -62,7 +66,7 @@ fromArray(array`a${1}b${2}c`)
 
 ### concat
 ```ts
-function concat(strings: TemplateStringsArray, ...values: unknown[]): string
+function concat(strings: ReadonlyArray<string>, ...values: unknown[]): string
 ```
 
 It is equivalent to `Array.prototype.concat` for template arguments.
@@ -79,7 +83,7 @@ concat(strings, ...values)
 
 ### dedent
 ```ts
-function dedent(strings: TemplateStringsArray, ...values: unknown[]): string
+function dedent(strings: ReadonlyArray<string>, ...values: unknown[]): string
 ```
 
 ```ts
@@ -95,13 +99,13 @@ dedent`
 ```ts
 function oneline(
   separator: string
-, strings: TemplateStringsArray
+, strings: ReadonlyArray<string>
 , ...values: unknown[]
 ): string
 function oneline(
   separator: string
-): (strings: TemplateStringsArray, ...values: unknown[]) => string
-function oneline(strings: TemplateStringsArray, ...values: unknown[]): string
+): (strings: ReadonlyArray<string>, ...values: unknown[]) => string
+function oneline(strings: ReadonlyArray<string>, ...values: unknown[]): string
 ```
 
 ```ts
@@ -114,10 +118,10 @@ oneline(' ')`
 
 ### indentMultilineValues
 ```ts
-function indentMultilineValues(
-  strings: TemplateStringsArray
+function indentMultilineValues<Strings extends ReadonlyArray<string>>(
+  strings: Strings
 , ...values: string[]
-): [strings: TemplateStringsArray, ...values: string[]]
+): [strings: Strings, ...values: string[]]
 ```
 
 ```ts
@@ -151,7 +155,7 @@ type JavaScriptValue =
 | { [property: string]: JavaScriptValue }
 | JavaScriptValue[]
 
-function javascript(strings: TemplateStringsArray, ...values: JavaScriptValue[]): string
+function javascript(strings: ReadonlyArray<string>, ...values: JavaScriptValue[]): string
 ```
 
 ```ts

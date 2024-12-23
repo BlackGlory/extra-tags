@@ -1,7 +1,7 @@
-export function indentMultilineValues(
-  strings: TemplateStringsArray
+export function indentMultilineValues<Strings extends ReadonlyArray<string>>(
+  strings: Strings
 , ...values: string[]
-): [strings: TemplateStringsArray, ...values: string[]] {
+): [strings: Strings, ...values: string[]] {
   const newValues = values.map((value, i) => {
     if (isMultiline(value)) {
       const indent = getLastLineIndent(strings[i])
