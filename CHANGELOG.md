@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.1](https://github.com/BlackGlory/extra-tags/compare/v0.5.0...v0.5.1) (2024-12-23)
+
+
+### Features
+
+* add `array` ([23b3045](https://github.com/BlackGlory/extra-tags/commit/23b3045796ec18a867690417a7c12212d164f5fa))
+
 ## [0.5.0](https://github.com/BlackGlory/extra-tags/compare/v0.4.2...v0.5.0) (2024-10-31)
 
 
