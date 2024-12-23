@@ -37,6 +37,16 @@ function filter<T, U extends T = T>(
 ) => [strings: TemplateStringsArray, ...values: U[]]
 ```
 
+### array
+```ts
+function array<T>(strings: TemplateStringsArray, ...values: T[]): Array<string | T>
+```
+
+```ts
+array`a${1}b${2}c`
+// ['a', 1, 'b', 2, 'c']
+```
+
 ### concat
 ```ts
 function concat(strings: TemplateStringsArray, ...values: unknown[]): string
