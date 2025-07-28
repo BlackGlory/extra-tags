@@ -205,5 +205,97 @@ describe('indentMultilineValues', () => {
       + ' '.repeat(8)
       ])
     })
+
+    test('edge: multiple newlines #1', () => {
+      const result = indentMultilineValues`
+        a
+        ${'\n\nb'}
+        c
+      `
+      const [strings, ...values] = result
+
+      expect([...strings]).toEqual([
+        '\n'
+      + ' '.repeat(8) + 'a' + '\n'
+      + ' '.repeat(8)
+      , '\n'
+      + ' '.repeat(8) + 'c' + '\n'
+      + ' '.repeat(6)
+      ])
+      expect(values).toEqual([
+        '\n'
+      + ' '.repeat(8) + '\n'
+      + ' '.repeat(8) + 'b'
+      ])
+    })
+
+    test('edge: multiple newlines #2', () => {
+      const result = indentMultilineValues`
+        a
+        ${'b\n\nc'}
+        d
+      `
+      const [strings, ...values] = result
+
+      expect([...strings]).toEqual([
+        '\n'
+      + ' '.repeat(8) + 'a' + '\n'
+      + ' '.repeat(8)
+      , '\n'
+      + ' '.repeat(8) + 'd' + '\n'
+      + ' '.repeat(6)
+      ])
+      expect(values).toEqual([
+        'b' + '\n'
+      + ' '.repeat(8) + '\n'
+      + ' '.repeat(8) + 'c'
+      ])
+    })
+
+    test('edge: multiple newlines #3', () => {
+      const result = indentMultilineValues`
+        a
+        ${'b\n\n'}
+        c
+      `
+      const [strings, ...values] = result
+
+      expect([...strings]).toEqual([
+        '\n'
+      + ' '.repeat(8) + 'a' + '\n'
+      + ' '.repeat(8)
+      , '\n'
+      + ' '.repeat(8) + 'c' + '\n'
+      + ' '.repeat(6)
+      ])
+      expect(values).toEqual([
+        'b' + '\n'
+      + ' '.repeat(8) + '\n'
+      + ' '.repeat(8)
+      ])
+    })
+
+    test('edge: multiple newlines #4', () => {
+      const result = indentMultilineValues`
+        a
+        ${'\nb\n'}
+        c
+      `
+      const [strings, ...values] = result
+
+      expect([...strings]).toEqual([
+        '\n'
+      + ' '.repeat(8) + 'a' + '\n'
+      + ' '.repeat(8)
+      , '\n'
+      + ' '.repeat(8) + 'c' + '\n'
+      + ' '.repeat(6)
+      ])
+      expect(values).toEqual([
+        '\n'
+      + ' '.repeat(8) + 'b' + '\n'
+      + ' '.repeat(8)
+      ])
+    })
   })
 })
