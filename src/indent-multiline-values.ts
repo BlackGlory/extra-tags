@@ -1,13 +1,23 @@
+import { concat } from './concat.js'
+
 export function indentMultilineValues<Strings extends ReadonlyArray<string>>(
   strings: Strings
 , ...values: string[]
 ): [strings: Strings, ...values: string[]] {
-  const newValues = values.map((value, i) => {
+  const newValues: string[] = []
+
+  values.forEach((value, i) => {
     if (isMultiline(value)) {
-      const indent = getLastLineIndent(strings[i])
-      return indentExceptFirstLine(indent, value)
+      const indent = getLastLineIndent(
+        concat(
+          strings.slice(0, i + 1)
+        , ...newValues
+        )
+      )
+
+      newValues.push(indentExceptFirstLine(indent, value))
     } else {
-      return value
+      newValues.push(value)
     }
   })
 
@@ -29,6 +39,6 @@ function isMultiline(text: string): boolean {
 }
 
 function getLastLineIndent(text: string): string {
-  const result = text.match(/\n([ \t]+)$/)
+  const result = text.match(/\n([ \t]+)[^ \t]*$/)
   return result?.[1] ?? ''
 }
