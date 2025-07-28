@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.3](https://github.com/BlackGlory/extra-tags/compare/v0.5.2...v0.5.3) (2025-07-28)
+
+
+### Bug Fixes
+
+* **indent-multiline-values:** edge cases about multiple values in one line ([a32f6d1](https://github.com/BlackGlory/extra-tags/commit/a32f6d192059f17d67111b1df0968e8c851ff04e))
+
 ### [0.5.2](https://github.com/BlackGlory/extra-tags/compare/v0.5.1...v0.5.2) (2024-12-23)
 
 
