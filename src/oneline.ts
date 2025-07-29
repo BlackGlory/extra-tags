@@ -4,6 +4,7 @@ import {
 , removeLeadingBlankLines
 , removeTrailingBlankLines
 , isString
+, toString
 } from 'extra-utils'
 import { concat } from '@src/concat.js'
 import { map } from '@src/map.js'
@@ -39,7 +40,7 @@ export function oneline(...args:
 
       return pipe(
         [strings, ...values] as const
-      , params => map(String, ...params)
+      , params => map(toString, ...params)
       , params => indentMultilineValues(...params)
       , params => concat(...params)
       , removeLeadingBlankLines
