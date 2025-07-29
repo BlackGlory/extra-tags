@@ -39,6 +39,6 @@ function isMultiline(text: string): boolean {
 }
 
 function getLastLineIndent(text: string): string {
-  const result = text.match(/\n([ \t]+)[^ \t]*$/)
+  const result = text.match(/\n([ \t]+).*$/)
   return result?.[1] ?? ''
 }

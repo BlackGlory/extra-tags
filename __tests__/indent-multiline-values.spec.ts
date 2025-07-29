@@ -3,12 +3,11 @@ import { indentMultilineValues } from '@src/indent-multiline-values.js'
 
 describe('indentMultilineValues', () => {
   test('single-line value', () => {
-    const result = indentMultilineValues`
+    const [strings, ...values] = indentMultilineValues`
       a
       ${'b'}
       c
     `
-    const [strings, ...values] = result
 
     expect([...strings]).toEqual([
       '\n'
@@ -23,12 +22,11 @@ describe('indentMultilineValues', () => {
 
   describe('multi-line value', () => {
     test('position: begin', () => {
-      const result = indentMultilineValues`
+      const [strings, ...values] = indentMultilineValues`
         a
         ${'\nb'}
         c
       `
-      const [strings, ...values] = result
 
       expect([...strings]).toEqual([
         '\n'
@@ -45,12 +43,11 @@ describe('indentMultilineValues', () => {
     })
 
     test('position: middle', () => {
-      const result = indentMultilineValues`
+      const [strings, ...values] = indentMultilineValues`
         a
         ${'b\nc'}
         d
       `
-      const [strings, ...values] = result
 
       expect([...strings]).toEqual([
         '\n'
@@ -67,12 +64,11 @@ describe('indentMultilineValues', () => {
     })
 
     test('position: end', () => {
-      const result = indentMultilineValues`
+      const [strings, ...values] = indentMultilineValues`
         a
         ${'b\n'}
         c
       `
-      const [strings, ...values] = result
 
       expect([...strings]).toEqual([
         '\n'
@@ -89,12 +85,11 @@ describe('indentMultilineValues', () => {
     })
 
     test('edge: blank lines', () => {
-      const result = indentMultilineValues`
+      const [strings, ...values] = indentMultilineValues`
         
         ${'a\nb'}
         
       `
-      const [strings, ...values] = result
 
       expect([...strings]).toEqual([
         '\n'
@@ -111,12 +106,11 @@ describe('indentMultilineValues', () => {
     })
 
     test('edge: multiple values in one line #1', () => {
-      const result = indentMultilineValues`
+      const [strings, ...values] = indentMultilineValues`
         a
         ${'b\n'}${'c'}
         d
       `
-      const [strings, ...values] = result
 
       expect([...strings]).toEqual([
         '\n'
@@ -135,12 +129,11 @@ describe('indentMultilineValues', () => {
     })
 
     test('edge: multiple values in one line #2', () => {
-      const result = indentMultilineValues`
+      const [strings, ...values] = indentMultilineValues`
         a
         ${'\nb'}${'c'}
         d
       `
-      const [strings, ...values] = result
 
       expect([...strings]).toEqual([
         '\n'
@@ -159,12 +152,11 @@ describe('indentMultilineValues', () => {
     })
 
     test('edge: multiple values in one line #3', () => {
-      const result = indentMultilineValues`
+      const [strings, ...values] = indentMultilineValues`
         a
         ${'b'}${'\nc'}
         d
       `
-      const [strings, ...values] = result
 
       expect([...strings]).toEqual([
         '\n'
@@ -183,12 +175,11 @@ describe('indentMultilineValues', () => {
     })
 
     test('edge: multiple values in one line #4', () => {
-      const result = indentMultilineValues`
+      const [strings, ...values] = indentMultilineValues`
         a
         ${'b'}${'c\n'}
         d
       `
-      const [strings, ...values] = result
 
       expect([...strings]).toEqual([
         '\n'
@@ -206,13 +197,31 @@ describe('indentMultilineValues', () => {
       ])
     })
 
+    test('edge: multiple values in one line #5', () => {
+      const [strings, ...values] = indentMultilineValues`
+        ${'a '}${'\nb'}
+      `
+
+      expect([...strings]).toStrictEqual([
+        '\n'
+      + ' '.repeat(8)
+      , ''
+      , '\n'
+      + ' '.repeat(6)
+      ])
+      expect(values).toStrictEqual([
+        'a '
+      , '\n'
+      + ' '.repeat(8) + 'b'
+      ])
+    })
+
     test('edge: multiple newlines #1', () => {
-      const result = indentMultilineValues`
+      const [strings, ...values] = indentMultilineValues`
         a
         ${'\n\nb'}
         c
       `
-      const [strings, ...values] = result
 
       expect([...strings]).toEqual([
         '\n'
@@ -230,12 +239,11 @@ describe('indentMultilineValues', () => {
     })
 
     test('edge: multiple newlines #2', () => {
-      const result = indentMultilineValues`
+      const [strings, ...values] = indentMultilineValues`
         a
         ${'b\n\nc'}
         d
       `
-      const [strings, ...values] = result
 
       expect([...strings]).toEqual([
         '\n'
@@ -253,12 +261,11 @@ describe('indentMultilineValues', () => {
     })
 
     test('edge: multiple newlines #3', () => {
-      const result = indentMultilineValues`
+      const [strings, ...values] = indentMultilineValues`
         a
         ${'b\n\n'}
         c
       `
-      const [strings, ...values] = result
 
       expect([...strings]).toEqual([
         '\n'
@@ -276,12 +283,11 @@ describe('indentMultilineValues', () => {
     })
 
     test('edge: multiple newlines #4', () => {
-      const result = indentMultilineValues`
+      const [strings, ...values] = indentMultilineValues`
         a
         ${'\nb\n'}
         c
       `
-      const [strings, ...values] = result
 
       expect([...strings]).toEqual([
         '\n'
